@@ -2014,7 +2014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d500a9531bd40458962ef585fd8cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballSpeed: 4
+  ballSpeed: 30
   jumpSpeed: 10
   isFlat: 1
   inContact: 1
