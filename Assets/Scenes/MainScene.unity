@@ -306,11 +306,11 @@ RectTransform:
   m_Father: {fileID: 659797719}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 248, y: 527}
-  m_SizeDelta: {x: 62.3, y: 29}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -49.849976, y: -40.5}
+  m_SizeDelta: {x: 62.299988, y: 29}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &230691031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1907,6 +1907,7 @@ GameObject:
   - component: {fileID: 1141031166}
   - component: {fileID: 1141031165}
   - component: {fileID: 1141031170}
+  - component: {fileID: 1141031171}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -2014,13 +2015,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d500a9531bd40458962ef585fd8cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballSpeed: 30
+  ballSpeed: 10
   jumpSpeed: 10
   isFlat: 1
   inContact: 1
   cointext: {fileID: 1308981152}
   aSource: {fileID: 1757608430}
   aClip: {fileID: 8300000, guid: dfd21172579ed4f06b01e5e1f4ada68c, type: 3}
+--- !u!114 &1141031171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141031164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d500a9531bd40458962ef585fd8cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballSpeed: 0
+  jumpSpeed: 0
+  isFlat: 1
+  inContact: 1
+  cointext: {fileID: 1308981152}
+  aSource: {fileID: 1757608430}
+  aClip: {fileID: 8300000, guid: 59c81458023554bbeb655e7f68a1d9fd, type: 3}
 --- !u!1001 &1164282802
 PrefabInstance:
   m_ObjectHideFlags: 0

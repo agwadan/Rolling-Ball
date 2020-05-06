@@ -5,7 +5,12 @@ using UnityEngine.iOS;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class MoveBall : MonoBehaviour {
+
+
+
+
 
     Rigidbody rb;
     public int ballSpeed = 0;
@@ -48,7 +53,7 @@ public class MoveBall : MonoBehaviour {
         inContact = false;
 
           
-    }
+    } 
 
     private void OnCollisionStay() /* Part of the monoBehavior class */  {
         inContact = true;
@@ -58,7 +63,7 @@ public class MoveBall : MonoBehaviour {
         if (other.gameObject.CompareTag("Coinstag")){
             other.gameObject.SetActive (false);
 
-            counter = counter - 1; //Increase the counter by 1.
+            counter = counter - 1; //-----------------------------------------------------------------------------------------Increase the counter by 1.
              cointext.text = counter.ToString() + " COINS LEFT";
 
              aSource.PlayOneShot (aClip);
@@ -67,6 +72,6 @@ public class MoveBall : MonoBehaviour {
                 SceneManager.LoadScene("EndScene"); 
              }
         }
-    }
+    } 
 
 }
