@@ -63,7 +63,6 @@ public class MoveBall : MonoBehaviour {
 
         if((Input.touchCount > 0) && inContact == true) {
             Vector3 ballJump = new Vector3(0.0f, 6.0f, 0.0f);
-           // rb.AddForce(ballJump * jumpSpeed); 
         }
 
         cc.Move(tilt * Time.deltaTime);
