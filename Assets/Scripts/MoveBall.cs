@@ -7,25 +7,28 @@ using UnityEngine.SceneManagement;
 
 
 public class MoveBall : MonoBehaviour {
-
-
-
-
-
-    Rigidbody rb;
+    //Rigidbody rb;
     public int ballSpeed = 0;
     public int jumpSpeed = 0;
     public bool isFlat = true;
     public bool inContact = true;
-    private int counter; //This is made private so that it is not visible in the inspector panel.
+    private int counter; //--------------------------------------------------- This is made private so that it is not visible in the inspector panel.
     public Text cointext;
     public AudioSource aSource;
     public AudioClip aClip;
 
+    private float verticalVelocity;
+    private float gravity = 14.0f;
+    private float jumpForce = 10.0f;
+
+    private CharacterController cc;
+
     // Start is called before the first frame update
     void Start() {
 
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
+
+        cc = GetComponent<CharacterController>();
 
         counter = 7;
          cointext.text = counter + " COINS LEFT";
@@ -42,13 +45,28 @@ public class MoveBall : MonoBehaviour {
             tilt = Quaternion.Euler(90, 0, 0) * tilt;
         
 
-        rb.AddForce(tilt * ballSpeed);
-        Debug.DrawRay(transform.position + Vector3.up, tilt, Color.red);
+        //rb.AddForce(tilt * ballSpeed);
+        //Debug.DrawRay(transform.position + Vector3.up, tilt, Color.red);
+
+        if(cc.isGrounded){
+            verticalVelocity = -gravity * Time.deltaTime;
+            if(Input.GetKeyDown(KeyCode.Space)){
+                verticalVelocity = jumpForce;
+            }
+        } else {
+            verticalVelocity -= gravity * Time.deltaTime;
+        }
+
+        Vector3 moveVector = new Vector3(0, verticalVelocity, 0);
+        cc.Move(moveVector * Time.deltaTime);
+
 
         if((Input.touchCount > 0) && inContact == true) {
             Vector3 ballJump = new Vector3(0.0f, 6.0f, 0.0f);
-            rb.AddForce(ballJump * jumpSpeed); 
+           // rb.AddForce(ballJump * jumpSpeed); 
         }
+
+        cc.Move(tilt * Time.deltaTime);
 
         inContact = false;
 
