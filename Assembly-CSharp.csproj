@@ -65,6 +65,8 @@
      <Compile Include="Assets\Scripts\RestartScript.cs" />
      <Compile Include="Assets\Scripts\RestartScript1.cs" />
      <Compile Include="Assets\Scripts\RotateCoins.cs" />
+     <Compile Include="Assets\Scripts\TimerScript.cs" />
+     <None Include="Assets\Fonts\digital_7\readme.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>E:/Courses/Rolling Ball/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
